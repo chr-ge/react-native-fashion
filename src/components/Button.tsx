@@ -27,7 +27,7 @@ const Button = ({ variant, label, onPress }: ButtonProps) => {
     : variant === "transparent" 
     ? "transparent"
     : colors.grey;
-  const color = variant === "primary" ? colors.white : colors.text;
+  const color = variant === "primary" ? colors.white : colors.secondary;
   
   return (
     <RectButton
