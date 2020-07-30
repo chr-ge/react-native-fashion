@@ -15,14 +15,18 @@ const styles = StyleSheet.create({
 });
 
 interface ButtonProps {
-  variant: "default" | "primary";
+  variant: "default" | "primary" | "transparent";
   label: string;
   onPress: () => void;
 }
 
 const Button = ({ variant, label, onPress }: ButtonProps) => {
   const { colors } = useTheme<Theme>();
-  const backgroundColor = variant === "primary" ? colors.primary : colors.grey;
+  const backgroundColor = variant === "primary" 
+    ? colors.primary
+    : variant === "transparent" 
+    ? "transparent"
+    : colors.grey;
   const color = variant === "primary" ? colors.white : colors.text;
   
   return (
