@@ -6,8 +6,8 @@ import Animated, { multiply, divide } from "react-native-reanimated";
 import Slide, { SLIDE_HEIGHT } from './Slide';
 import SubSlide from './SubSlide';
 import Dot from './Dot';
+import { theme } from '../../components';
 
-const BORDER_RADIUS = 75;
 const {width} = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
     slider: {
         height: SLIDE_HEIGHT,
-        borderBottomEndRadius: BORDER_RADIUS,
+        borderBottomEndRadius: theme.borderRadii.xl,
     },
     footer: {
         flex: 1
@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
     footerContent: {
         flex: 1,
         backgroundColor: "white",
-        borderTopLeftRadius: BORDER_RADIUS
+        borderTopLeftRadius: theme.borderRadii.xl
     },
     pagination: { 
         ...StyleSheet.absoluteFillObject,
-        height: BORDER_RADIUS,
+        height: theme.borderRadii.xl,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center"
