@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { useScrollHandler, interpolateColor } from "react-native-redash";
-import Animated, { multiply } from "react-native-reanimated";
+import Animated, { multiply, divide } from "react-native-reanimated";
 
 import Slide, { SLIDE_HEIGHT } from './Slide';
 import SubSlide from './SubSlide';
+import Dot from './Dot';
 
 const BORDER_RADIUS = 75;
 const {width} = Dimensions.get('window');
@@ -22,9 +23,15 @@ const styles = StyleSheet.create({
     },
     footerContent: {
         flex: 1,
-        flexDirection: "row",
         backgroundColor: "white",
         borderTopLeftRadius: BORDER_RADIUS
+    },
+    pagination: { 
+        ...StyleSheet.absoluteFillObject,
+        height: BORDER_RADIUS,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center"
     }
 })
 
@@ -84,28 +91,34 @@ const Onboarding = () => {
                 <Animated.View 
                     style={{ ...StyleSheet.absoluteFillObject, backgroundColor }} 
                 />
-                <Animated.View 
-                    style={[styles.footerContent, {
+                <View style={styles.footerContent}>
+                    <View style={styles.pagination}>
+                        {slides.map((_, index) => 
+                            <Dot key={index} currentIndex={divide(x, width)} {...{ index }} />)
+                        }
+                    </View>
+                    <Animated.View style={{ 
+                        flex: 1, 
+                        flexDirection: "row", 
                         width: width * slides.length,
-                        flex: 1,
-                        transform: [{ translateX: multiply(x, -1) }]
-                    }]}
-                >
-                    {slides.map(({ subtitle, description }, index) => (
-                        <SubSlide 
-                            key={index} 
-                            last={index === slides.length - 1} 
-                            {...{ subtitle, description }}
-                            onPress={() => {
-                                if (scroll.current) {
-                                  scroll.current
-                                    .getNode()
-                                    .scrollTo({ x: width * (index + 1), animated: true });
-                                }
-                            }}
-                        />
-                    ))}
-                </Animated.View>
+                        transform: [{ translateX: multiply(x, -1) }] 
+                    }}>
+                        {slides.map(({ subtitle, description }, index) => (
+                            <SubSlide 
+                                key={index} 
+                                last={index === slides.length - 1} 
+                                {...{ subtitle, description }}
+                                onPress={() => {
+                                    if (scroll.current) {
+                                    scroll.current
+                                        .getNode()
+                                        .scrollTo({ x: width * (index + 1), animated: true });
+                                    }
+                                }}
+                            />
+                        ))}
+                    </Animated.View>
+                </View>
             </View>
         </View>
     );
