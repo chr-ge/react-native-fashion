@@ -17,7 +17,7 @@
     "expo-asset": "~8.1.7",
     "expo-constants": "~9.1.1",
     "expo-font": "~8.2.1",
-    "expo-status-bar": "^1.0.2",
+    "expo-status-bar": "^1.0.0",
     "formik": "^2.1.5",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",

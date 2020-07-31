@@ -33,7 +33,7 @@ const SignUp = ({ navigation }: StackNavigationProps<Routes, "SignUp">) => {
             <Box padding="xl">
                 <Text variant="title1" textAlign="center" marginBottom="l">Create account</Text>
                 <Text variant="body" textAlign="center" marginBottom="l">
-                    Let us know your name, email and password.
+                    Let us know your email and password.
                 </Text>
                 <Box>
                     <Box marginBottom="m">
