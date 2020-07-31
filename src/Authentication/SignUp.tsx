@@ -1,35 +1,39 @@
 import React, { useRef } from 'react';
+import { TextInput as RNTextInput } from 'react-native';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import { Container, Button, Text, Box } from '../components';
+import { StackNavigationProps, Routes } from '../components/Navigation';
+
 import TextInput  from './components/Form/TextInput';
-import Checkbox  from './components/Form/Checkbox';
 import Footer from './components/Footer';
 
 const SignUpSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
-    password: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required')
+    password: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
+    confirmPassword: Yup.string().equals([Yup.ref('password')], "Passwords don't match").required('Required')
 });
 
-const SignUp = () => {
+const SignUp = ({ navigation }: StackNavigationProps<Routes, "SignUp">) => {
     const { 
         handleChange, handleBlur, handleSubmit,
-        values, errors, touched, setFieldValue 
+        errors, touched 
     } = useFormik({
         validationSchema: SignUpSchema,
-        initialValues: { email: '', password: '', remember: false },
+        initialValues: { email: '', password: '', confirmPassword: '' },
         onSubmit: (initialValues) => console.log(initialValues) 
     });
-    const password = useRef<typeof TextInput>(null);
-    const footer = <Footer title="Don't have an account?" action="Sign Up here" onPress={() => true} />
+    const password = useRef<RNTextInput>(null);
+    const confirmPassword = useRef<RNTextInput>(null);
+    const footer = <Footer title="Already have an account?" action="Login here" onPress={() => navigation.navigate('Login')} />
 
     return (
         <Container {...{footer}}>
             <Box padding="xl">
-                <Text variant="title1" textAlign="center" marginBottom="l">Welcome Back</Text>
+                <Text variant="title1" textAlign="center" marginBottom="l">Create account</Text>
                 <Text variant="body" textAlign="center" marginBottom="l">
-                    Use your credentials below and login to your account.
+                    Let us know your name, email and password.
                 </Text>
                 <Box>
                     <Box marginBottom="m">
@@ -46,14 +50,31 @@ const SignUp = () => {
                             onSubmitEditing={() => password.current?.focus()}
                         />
                     </Box>
+                    <Box marginBottom="m">
+                        <TextInput 
+                            ref={password}
+                            icon="lock" 
+                            placeholder="Enter your password" 
+                            onChangeText={handleChange('password')}
+                            onBlur={handleBlur('password')}
+                            error={errors.password}
+                            touched={touched.password}
+                            autoCompleteType="password"
+                            autoCapitalize="none"
+                            returnKeyType="next"
+                            returnKeyLabel="next"
+                            onSubmitEditing={() => confirmPassword.current?.focus()}
+                            secureTextEntry
+                        />
+                    </Box>
                     <TextInput 
-                        ref={password}
+                        ref={confirmPassword}
                         icon="lock" 
-                        placeholder="Enter your password" 
-                        onChangeText={handleChange('password')}
-                        onBlur={handleBlur('password')}
-                        error={errors.password}
-                        touched={touched.password}
+                        placeholder="Confirm your password" 
+                        onChangeText={handleChange('confirmPassword')}
+                        onBlur={handleBlur('confirmPassword')}
+                        error={errors.confirmPassword}
+                        touched={touched.confirmPassword}
                         autoCompleteType="password"
                         autoCapitalize="none"
                         returnKeyType="go"
@@ -61,18 +82,8 @@ const SignUp = () => {
                         onSubmitEditing={() => handleSubmit()}
                         secureTextEntry
                     />
-                    <Box flexDirection="row" justifyContent="space-between">
-                        <Checkbox 
-                            label="Remember me" 
-                            checked={values.remember} 
-                            onChange={() => setFieldValue("remember", !values.remember)}
-                        />
-                        <Button variant="transparent" onPress={() => true}>
-                            <Text variant="" color="primary">Forgot Password</Text>
-                        </Button>
-                    </Box>
                     <Box alignItems="center" marginTop="m">
-                        <Button variant="primary" label="Log into your account" onPress={handleSubmit} />
+                        <Button variant="primary" label="Create your account" onPress={handleSubmit} />
                     </Box>
                 </Box>
             </Box>

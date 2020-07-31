@@ -1,12 +1,14 @@
 import React, { useRef } from 'react';
+import { TextInput as RNTextInput } from 'react-native';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import { Container, Button, Text, Box } from '../components';
+import { StackNavigationProps, Routes } from '../components/Navigation';
+
 import TextInput  from './components/Form/TextInput';
 import Checkbox  from './components/Form/Checkbox';
 import Footer from './components/Footer';
-import { StackNavigationProps, Routes } from '../components/Navigation';
 
 const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -22,7 +24,7 @@ const Login = ({ navigation }: StackNavigationProps<Routes, "Login">) => {
         initialValues: { email: '', password: '', remember: false },
         onSubmit: (initialValues) => console.log(initialValues) 
     });
-    const password = useRef<typeof TextInput>(null);
+    const password = useRef<RNTextInput>(null);
     const footer = <Footer title="Don't have an account?" action="Sign Up here" onPress={() => navigation.navigate('SignUp')} />
 
     return (

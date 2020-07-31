@@ -9,7 +9,7 @@ interface TextInputProps extends RNTextInputProps {
     touched?: boolean;
 }
 
-const TextInput = forwardRef(({ icon, error, touched, ...props }: TextInputProps, ref) => {
+const TextInput = forwardRef<RNTextInput, TextInputProps>(({ icon, error, touched, ...props }, ref) => {
     const theme = useTheme();
     const SIZE = theme.borderRadii.m * 2;
     const color = !touched ? "body" : error ? 'danger' : 'primary';
