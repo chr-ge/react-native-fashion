@@ -18,6 +18,7 @@
     "expo-constants": "~9.1.1",
     "expo-font": "~8.2.1",
     "expo-status-bar": "^1.0.2",
+    "formik": "^2.1.5",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
@@ -27,7 +28,8 @@
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
     "react-native-svg": "12.1.0",
-    "react-native-web": "~0.11.7"
+    "react-native-web": "~0.11.7",
+    "yup": "^0.29.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
