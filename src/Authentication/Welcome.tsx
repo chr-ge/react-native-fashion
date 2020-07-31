@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Text, Button } from '../../components';
-import { StackNavigationProps, Routes } from '../../components/Navigation';
+import { Box, Text, Button } from '../components';
+import { StackNavigationProps, Routes } from '../components/Navigation';
 
 const Welcome = ({ navigation }: StackNavigationProps<Routes, "Welcome">) => {
     return (
