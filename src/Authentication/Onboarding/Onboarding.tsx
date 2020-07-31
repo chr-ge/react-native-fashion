@@ -3,14 +3,14 @@ import { View, StyleSheet, Dimensions } from 'react-native';
 import { useScrollHandler, interpolateColor } from "react-native-redash";
 import Animated, { multiply, divide } from "react-native-reanimated";
 import { StackNavigationProps, Routes } from '../../components/Navigation';
-import { theme } from '../../components';
 
 import Slide, { SLIDE_HEIGHT } from './Slide';
 import SubSlide from './SubSlide';
 import Dot from './Dot';
+import { Theme, makeStyles } from '../../components/Theme';
 
 const {width} = Dimensions.get('window');
-const styles = StyleSheet.create({
+const useStyles = makeStyles((theme: Theme) => (({
     container: {
         flex: 1,
         backgroundColor: "white"
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center"
     }
-})
+})))
 
 const slides = [
     {
@@ -64,6 +64,7 @@ const slides = [
 ];
 
 const Onboarding = ({ navigation }: StackNavigationProps<Routes, "Onboarding">) => {
+    const styles = useStyles();
     const scroll = useRef<Animated.ScrollView>(null);
     const {scrollHandler , x} = useScrollHandler();
     const backgroundColor = interpolateColor(x, {

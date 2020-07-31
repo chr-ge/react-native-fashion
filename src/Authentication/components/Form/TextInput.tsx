@@ -1,7 +1,7 @@
 import React from "react";
 import { TextInput as RNTextInput, StyleSheet, TextInputProps as RNTextInputProps } from "react-native";
 import { Feather as Icon } from '@expo/vector-icons';
-import { Box, theme } from "../../../components";
+import { Box, useTheme } from "../../../components";
 
 interface TextInputProps extends RNTextInputProps {
     icon: string;
@@ -9,9 +9,9 @@ interface TextInputProps extends RNTextInputProps {
     touched?: boolean;
 }
 
-const SIZE = theme.borderRadii.m * 2;
-
 const TextInput = ({ icon, error, touched, ...props }: TextInputProps) => {
+    const theme = useTheme();
+    const SIZE = theme.borderRadii.m * 2;
     const color = !touched ? "body" : error ? 'danger' : 'primary';
     const themeColor = theme.colors[color];
 

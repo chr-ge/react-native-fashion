@@ -3,7 +3,8 @@ import { ThemeProvider } from '@shopify/restyle';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { AuthenticationNavigator } from './src/Authentication';
-import { LoadAssets, theme } from './src/components';
+import { LoadAssets } from './src/components';
+import { theme } from './src/components/Theme';
 
 const fonts = {
   "SFProDisplay-Bold": require("./assets/fonts/SF-Pro-Display-Bold.otf"),
