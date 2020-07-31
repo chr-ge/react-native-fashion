@@ -20,7 +20,7 @@ const Container = ({ children, footer }: ContainerProps) => {
         <Box flex={1} backgroundColor="secondary">
             <StatusBar barStyle="light-content" />
             <Box backgroundColor="white">
-                <Box borderBottomLeftRadius="xl" overflow="hidden" height={height * 0.61}> 
+                <Box borderBottomLeftRadius="xl" overflow="hidden" height={height * 0.55 }> 
                     <Image 
                         source={assets[0]} 
                         style={{ width, height, borderBottomLeftRadius: theme.borderRadii.xl }}

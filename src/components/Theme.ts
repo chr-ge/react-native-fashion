@@ -4,10 +4,12 @@ const theme = createTheme({
   colors: {
     primary: "#2CB9B0",
     secondary: "#0C0D34",
+    danger: "#FF0058",
     body: "rgba(12, 13, 52, 0.7)",
     white: "white",
     grey: "rgba(12, 13, 52, 0.05)",
-    lightGrey: "#F4F0EF"
+    lightGrey: "#F4F0EF",
+    darkGrey: "#8A8D90"
   },
   spacing: {
     s: 8,
