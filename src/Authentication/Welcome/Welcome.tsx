@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Text, Button } from '../../components';
 import { StackNavigationProps, Routes } from '../../components/Navigation';
 
-const Welcome = ({ navigation }: StackNavigationProps<Routes, "Login">) => {
+const Welcome = ({ navigation }: StackNavigationProps<Routes, "Welcome">) => {
     return (
         <Box flex={1} backgroundColor="white">
             <Box flex={1} borderBottomRightRadius="xl" backgroundColor="lightGrey">
