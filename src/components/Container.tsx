@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import { Dimensions, Image, StyleSheet, StatusBar } from "react-native";
 import { Box, useTheme } from './Theme';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 export const assets = [require("./assets/1.png")]
 const { width } = Dimensions.get('window');
@@ -34,7 +35,9 @@ const Container = ({ children, footer }: ContainerProps) => {
                     style={{ ...StyleSheet.absoluteFillObject, width, height, top: -height * 0.61 }}
                 />
                 <Box flex={1} borderRadius="xl" borderTopLeftRadius={0} backgroundColor="white">
-                    {children}
+                    <KeyboardAwareScrollView>
+                        {children}
+                    </KeyboardAwareScrollView>
                 </Box>
             </Box>
             <Box backgroundColor="secondary" paddingTop="m">

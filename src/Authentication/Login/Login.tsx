@@ -5,29 +5,14 @@ import * as Yup from 'yup';
 import { Container, Button, Text, Box } from '../../components';
 import TextInput  from '../components/Form/TextInput';
 import Checkbox  from '../components/Form/Checkbox';
-import SocialLogin from '../components/SocialLogin';
+import Footer from '../components/Footer';
 
 const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
     password: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required')
 });
-  
 
 const Login = () => {
-    const footer = (
-        <>
-            <SocialLogin />
-            <Box alignItems="center">
-                <Button variant="transparent" onPress={() => alert("SignUp!")}>
-                    <Box flexDirection="row" justifyContent="center">
-                        <Text variant="button" color="white">Don't have an account?</Text>
-                        <Text variant="button" color="primary" marginLeft="s">Sign Up here</Text>
-                    </Box>
-                </Button>
-            </Box>
-        </>
-    ) 
-
     const { 
         handleChange, handleBlur, handleSubmit,
         values, errors, touched, setFieldValue 
@@ -36,6 +21,7 @@ const Login = () => {
         initialValues: { email: '', password: '', remember: false },
         onSubmit: (initialValues) => console.log(initialValues) 
     });
+    const footer = <Footer title="Don't have an account?" action="Sign Up here" onPress={() => true} />
 
     return (
         <Container {...{footer}}>
@@ -62,6 +48,7 @@ const Login = () => {
                         onBlur={handleBlur('password')}
                         error={errors.password}
                         touched={touched.password}
+                        secureTextEntry
                     />
                     <Box flexDirection="row" justifyContent="space-between">
                         <Checkbox 
