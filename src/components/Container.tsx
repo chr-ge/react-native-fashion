@@ -41,7 +41,14 @@ const Container = ({ children, footer, pattern }: ContainerProps) => {
                         source={asset} 
                         style={{ ...StyleSheet.absoluteFillObject, width, height, top: -height * 0.61 }}
                     />
-                    <Box flex={1} borderRadius="xl" borderTopLeftRadius={0} backgroundColor="white">
+                    <Box 
+                        flex={1} 
+                        borderRadius="xl" 
+                        borderTopLeftRadius={0} 
+                        backgroundColor="white" 
+                        justifyContent="center"
+                        padding="xl"
+                    >
                         {children}
                     </Box>
                 </Box>
