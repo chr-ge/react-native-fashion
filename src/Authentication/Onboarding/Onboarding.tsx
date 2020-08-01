@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { useScrollHandler, interpolateColor } from "react-native-redash";
 import Animated, { multiply, divide } from "react-native-reanimated";
-import { StackNavigationProps, Routes } from '../../components/Navigation';
+import { StackNavigationProps, AuthRoutes } from '../../components/Navigation';
 
 import Slide, { SLIDE_HEIGHT } from './Slide';
 import SubSlide from './SubSlide';
@@ -63,7 +63,7 @@ const slides = [
     },
 ];
 
-const Onboarding = ({ navigation }: StackNavigationProps<Routes, "Onboarding">) => {
+const Onboarding = ({ navigation }: StackNavigationProps<AuthRoutes, "Onboarding">) => {
     const styles = useStyles();
     const scroll = useRef<Animated.ScrollView>(null);
     const {scrollHandler , x} = useScrollHandler();

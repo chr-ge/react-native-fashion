@@ -1,8 +1,8 @@
 import React from 'react';
-import { StackNavigationProps, Routes } from '../components/Navigation';
+import { StackNavigationProps, AuthRoutes } from '../components/Navigation';
 import { Container, Box, Text, Button, RoundIconButton, RoundIcon } from '../components';
 
-const PasswordChanged = ({ navigation }: StackNavigationProps<Routes, "PasswordChanged">) => {
+const PasswordChanged = ({ navigation }: StackNavigationProps<AuthRoutes, "PasswordChanged">) => {
     const SIZE = 80;
 
     return(
