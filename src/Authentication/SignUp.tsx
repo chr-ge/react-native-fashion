@@ -29,7 +29,7 @@ const SignUp = ({ navigation }: StackNavigationProps<Routes, "SignUp">) => {
     const footer = <Footer title="Already have an account?" action="Login here" onPress={() => navigation.navigate('Login')} />
 
     return (
-        <Container {...{footer}}>
+        <Container pattern={1} {...{footer}}>
             <Box padding="xl">
                 <Text variant="title1" textAlign="center" marginBottom="l">Create account</Text>
                 <Text variant="body" textAlign="center" marginBottom="l">
