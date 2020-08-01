@@ -4,9 +4,9 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import { StackNavigationProps, Routes } from '../components/Navigation';
+import TextInput from '../components/Form/TextInput';
 import { Container, Box, Text, Button } from '../components';
 import Footer from './components/Footer';
-import TextInput from './components/Form/TextInput';
 
 const ForgotPasswordSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required')

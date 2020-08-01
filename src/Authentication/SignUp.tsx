@@ -5,8 +5,7 @@ import * as Yup from 'yup';
 
 import { Container, Button, Text, Box } from '../components';
 import { StackNavigationProps, Routes } from '../components/Navigation';
-
-import TextInput  from './components/Form/TextInput';
+import TextInput  from '../components/Form/TextInput';
 import Footer from './components/Footer';
 
 const SignUpSchema = Yup.object().shape({

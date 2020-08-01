@@ -5,9 +5,8 @@ import * as Yup from 'yup';
 
 import { Container, Button, Text, Box } from '../components';
 import { StackNavigationProps, Routes } from '../components/Navigation';
-
-import TextInput  from './components/Form/TextInput';
-import Checkbox  from './components/Form/Checkbox';
+import TextInput  from '../components/Form/TextInput';
+import Checkbox  from '../components/Form/Checkbox';
 import Footer from './components/Footer';
 
 const LoginSchema = Yup.object().shape({
