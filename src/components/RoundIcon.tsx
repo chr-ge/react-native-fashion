@@ -7,10 +7,11 @@ export interface RoundIconProps {
     size: number;
     color: keyof Theme['colors'];
     backgroundColor: keyof Theme['colors'];
+    iconRatio: number;
 }
 
-const RoundIcon = ({ name, size, color, backgroundColor }: RoundIconProps) => {
-    const iconSize = size * 0.7;
+const RoundIcon = ({ name, size, color, backgroundColor, iconRatio }: RoundIconProps) => {
+    const iconSize = size * iconRatio;
     
     return (
         <Box 
@@ -27,5 +28,7 @@ const RoundIcon = ({ name, size, color, backgroundColor }: RoundIconProps) => {
         </Box>
     )
 }
+
+RoundIcon.defaultProps = { iconRatio: 0.7 };
 
 export default RoundIcon;
