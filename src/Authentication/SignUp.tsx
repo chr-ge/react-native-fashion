@@ -21,7 +21,7 @@ const SignUp = ({ navigation }: AuthNavigationProps<"SignUp">) => {
     } = useFormik({
         validationSchema: SignUpSchema,
         initialValues: { email: '', password: '', confirmPassword: '' },
-        onSubmit: (initialValues) => console.log(initialValues) 
+        onSubmit: () => navigation.navigate('Home')
     });
     const password = useRef<RNTextInput>(null);
     const confirmPassword = useRef<RNTextInput>(null);
