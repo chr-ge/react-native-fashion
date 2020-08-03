@@ -58,6 +58,12 @@ export const theme = createTheme({
       fontFamily: "SFProDisplay-Medium",
       fontSize: 15,
       color: "secondary",
+    },
+    header: {
+      fontSize: 12,
+      lineHeight: 24,
+      fontFamily: "SFProDisplay-Semibold",
+      color: "secondary",
     }
   },
   breakpoints: {},
