@@ -6,10 +6,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { LoadAssets } from './src/components';
 import { AppRoutes } from './src/components/Navigation';
 import { theme } from './src/components/Theme';
-import { AuthenticationNavigator } from './src/Authentication';
+import { AuthenticationNavigator, assets as authAssets } from './src/Authentication';
 import { HomeNavigator, assets as homeAssets } from './src/Home';
 
-const assets = [...homeAssets];
+const assets = [...authAssets, ...homeAssets];
 
 const fonts = {
   "SFProDisplay-Bold": require("./assets/fonts/SF-Pro-Display-Bold.otf"),
