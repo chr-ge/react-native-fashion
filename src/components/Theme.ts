@@ -17,6 +17,7 @@ export const theme = createTheme({
     yellow: "#FFC641",
     pink: "#FF87A2",
     violet: "#442CB9",
+    lightBlue: "#BFEAF5"
   },
   spacing: {
     s: 8,
