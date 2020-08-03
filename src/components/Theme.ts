@@ -4,13 +4,14 @@ import { createTheme, createText, createBox, useTheme as useReTheme } from '@sho
 export const theme = createTheme({
   colors: {
     primary: "#2CB9B0",
-    primaryLight: "rgba(44, 185, 176, 0.1)",
+    primaryLight: "#E7F9F7",
     secondary: "#0C0D34",
     danger: "#FF0058",
     body: "rgba(12, 13, 52, 0.7)",
     white: "white",
     grey: "rgba(12, 13, 52, 0.05)",
     lightGrey: "#F4F0EF",
+    whiteGrey: "#FAFAFA",
     darkGrey: "#8A8D90",
     orange: "#FE5E33",
     yellow: "#FFC641",

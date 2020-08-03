@@ -1,13 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Box, Header } from '../../components';
+import { HomeNavigationProps } from '../../components/Navigation';
 
-interface OutfitIdeasProps {}
-
-const OutfitIdeas = () => {
+const OutfitIdeas = ({ navigation }: HomeNavigationProps<'OutfitIdeas'>) => {
     return (
-        <View style={{ flex: 1, backgroundColor: "red" }}>
-           
-        </View>
+        <Box flex={1} backgroundColor="white">
+            <Header 
+                title="Outfit Ideas"
+                left={{ icon: 'menu', onPress: () => navigation.openDrawer() }}
+                right={{ icon: 'shopping-bag', onPress: () => true }}
+            />
+        </Box>
     )
 }
 
