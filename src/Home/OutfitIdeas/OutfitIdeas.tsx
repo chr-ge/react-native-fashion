@@ -5,6 +5,7 @@ import { sub } from 'react-native-reanimated';
 import { Box, Header } from '../../components';
 import { HomeNavigationProps } from '../../components/Navigation';
 import Background from './Background';
+import Categories from './Categories';
 import Card from './Card';
 
 const cards = [
@@ -39,6 +40,7 @@ const OutfitIdeas = ({ navigation }: HomeNavigationProps<'OutfitIdeas'>) => {
                 left={{ icon: 'menu', onPress: () => navigation.openDrawer() }}
                 right={{ icon: 'shopping-bag', onPress: () => true }}
             />
+            <Categories />
             <Box flex={1}>
                 <Background />
                 {cards.map(({ index, source }) => 
