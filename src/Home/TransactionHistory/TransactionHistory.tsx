@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, Header, Text } from '../../components';
 import { HomeNavigationProps } from '../../components/Navigation';
-import Graph, { DataPoint } from './Graph';
+import Graph, { DataPoint } from './Graph/Graph';
 
 const graphData: DataPoint[] = [
     { date: new Date('2019-09-01').getTime(), value: 0, color: 'primary' },
