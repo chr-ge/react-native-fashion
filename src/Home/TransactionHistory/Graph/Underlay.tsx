@@ -47,8 +47,8 @@ const Underlay = ({ dates, minY, maxY, step }: UnderlayProps) => {
             >
                 { 
                     dates.map((date, i) => (
-                        <Box width={step}>
-                            <Text key={i} color="darkGrey" textAlign="center">{formatter.format(new Date(date))}</Text>
+                        <Box key={i} width={step}>
+                            <Text color="darkGrey" textAlign="center">{formatter.format(new Date(date))}</Text>
                         </Box>
                     ))
                 }
