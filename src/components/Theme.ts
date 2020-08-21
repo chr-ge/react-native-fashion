@@ -50,6 +50,11 @@ export const theme = createTheme({
       lineHeight: 30,
       color: 'secondary',
     },
+    title3: {
+      fontFamily: "SFProDisplay-Semibold",
+      fontSize: 16,
+      color: 'secondary',
+    },
     body: {
       fontFamily: "SFProDisplay-Regular",
       fontSize: 16,

@@ -1,17 +1,17 @@
 import React from 'react';
-
+import { ScrollView } from 'react-native';
 import { Box, Header, Text } from '../../components';
 import { HomeNavigationProps } from '../../components/Navigation';
-import Graph, { DataPoint } from './Graph/Graph';
+import Graph, { DataPoint } from './Graph';
+import Transaction from './Transaction';
+
+const startDate = new Date('09/01/2019').getTime();
+const numberOfMonths = 6;
 
 const graphData: DataPoint[] = [
-    { id: 245672, date: new Date('2019-09-01').getTime(), value: 0, color: 'primary' },
-    { id: 245673, date: new Date('2019-10-01').getTime(), value: 0, color: 'primary' },
-    { id: 245674, date: new Date('2019-11-01').getTime(), value: 139.42, color: 'primary' },
-    { id: 245675, date: new Date('2019-12-01').getTime(), value: 281.23, color: 'orange' },
-    { id: 245676, date: new Date('2020-01-01').getTime(), value: 0, color: 'primary' },
-    { id: 245677, date: new Date('2020-02-01').getTime(), value: 198.54, color: 'yellow' },
-    { id: 245678, date: new Date('2020-03-01').getTime(), value: 0, color: 'primary' },
+    { id: 245674, date: new Date('10/01/2019').getTime(), value: 139.42, color: 'primary' },
+    { id: 245675, date: new Date('12/01/2019').getTime(), value: 281.23, color: 'orange' },
+    { id: 245677, date: new Date('02/01/2020').getTime(), value: 198.54, color: 'yellow' },
 ];
 
 const TransactionHistory = ({ navigation }: HomeNavigationProps<'TransactionHistory'>) => {
@@ -23,7 +23,7 @@ const TransactionHistory = ({ navigation }: HomeNavigationProps<'TransactionHist
                 left={{ icon: 'arrow-left', onPress: () => navigation.openDrawer() }}
                 right={{ icon: 'share', onPress: () => true }} 
             />
-            <Box padding="m">
+            <Box flex={1} padding="m">
                 <Box flexDirection="row" justifyContent="space-between"alignItems="flex-end">
                     <Box>
                         <Text variant="header" color="secondary" opacity={0.3}>TOTAL SPENT</Text>
@@ -33,7 +33,12 @@ const TransactionHistory = ({ navigation }: HomeNavigationProps<'TransactionHist
                         <Text color="primary">All Time</Text>
                     </Box>
                 </Box>
-                <Graph data={graphData} />
+                <Graph data={graphData} startDate={startDate} numberOfMonths={numberOfMonths}/>
+                <ScrollView>
+                    {
+                        graphData.map(transaction => <Transaction key={transaction.id} transaction={transaction} />)
+                    }
+                </ScrollView>
             </Box>
         </Box>
     )
