@@ -1,5 +1,7 @@
 import React from "react";
 import { Dimensions } from "react-native";
+import moment from "moment";
+
 import { Box, useTheme } from "../../../components";
 import { Theme } from "../../../components/Theme";
 import Underlay, { MARGIN } from "./Underlay";
@@ -44,7 +46,7 @@ const Graph = ({ data, startDate, numberOfMonths }: GraphProps) => {
       />
       <Box width={width} height={height}>
         {data.map(point => {
-          const i = new Date(point.date - startDate).getMonth();
+          const i = Math.round(moment.duration(moment(point.date).diff(startDate)).asMonths());
 
           return (
             <Box
