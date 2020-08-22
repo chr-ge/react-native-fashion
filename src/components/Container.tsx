@@ -44,7 +44,6 @@ const Container = ({ children, footer, pattern }: ContainerProps) => {
                     <Box 
                         flex={1} 
                         borderRadius="xl" 
-                        borderTopLeftRadius={0} 
                         backgroundColor="background" 
                         justifyContent="center"
                         padding="xl"

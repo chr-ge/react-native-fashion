@@ -6,11 +6,12 @@ export interface RoundIconProps {
     name: string;
     size: number;
     color: keyof Theme['colors'];
-    backgroundColor: keyof Theme['colors'];
+    backgroundColor: keyof Theme['colors'] | undefined;
     iconRatio: number;
+    align: "center" | "flex-start" | "flex-end";
 }
 
-const RoundIcon = ({ name, size, color, backgroundColor, iconRatio }: RoundIconProps) => {
+const RoundIcon = ({ name, size, color, backgroundColor, iconRatio, align }: RoundIconProps) => {
     const iconSize = size * iconRatio;
     
     return (
@@ -18,7 +19,7 @@ const RoundIcon = ({ name, size, color, backgroundColor, iconRatio }: RoundIconP
             height={size} 
             width={size} 
             justifyContent="center"
-            alignItems="center"
+            alignItems={align}
             style={{ borderRadius: size / 2 }}
             { ...{ backgroundColor }}
         >
@@ -29,6 +30,9 @@ const RoundIcon = ({ name, size, color, backgroundColor, iconRatio }: RoundIconP
     )
 }
 
-RoundIcon.defaultProps = { iconRatio: 0.7 };
+RoundIcon.defaultProps = { 
+    iconRatio: 0.7 ,
+    align: "center"
+};
 
 export default RoundIcon;

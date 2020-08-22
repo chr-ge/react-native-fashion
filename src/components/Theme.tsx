@@ -9,26 +9,36 @@ import {
 } from "@shopify/restyle";
 
 export const palette = {
-  white: "white",
+  white: "#FFFFFF",
+  cyan: "#2CB9B0",
+  lightCyan: "#E7F9F7",
+  darkBlue: "#0C0D34",
   orange: "#FE5E33",
   yellow: "#FFC641",
   pink: "#FF87A2",
+  darkPink: "#FF0058",
   violet: "#442CB9",
   lightBlue: "#BFEAF5",
+  grey: "#F4F0EF",
+  darkGrey: "#808080",
 };
 
 const theme = createTheme({
   colors: {
-    primary: "#2CB9B0",
-    primaryLight: "#E7F9F7",
-    secondary: "#0C0D34",
-    danger: "#FF0058",
-    body: "rgba(12, 13, 52, 0.7)",
     background: palette.white,
-    grey: "rgba(12, 13, 52, 0.05)",
-    lightGrey: "#F4F0EF",
-    whiteGrey: "#FAFAFA",
-    darkGrey: "#8A8D90",
+    background2: palette.grey,
+    primary: palette.cyan,
+    primaryLight: palette.lightCyan,
+    secondary: palette.darkBlue,
+    info: palette.darkGrey,
+    danger: palette.darkPink,
+    body: "rgba(12, 13, 52, 0.7)",
+    graph1: palette.orange,
+    graph2: palette.yellow,
+    drawer1: palette.orange,
+    drawer2: palette.yellow,
+    drawer3: palette.pink,
+    drawer4: palette.violet,
   },
   spacing: {
     s: 8,

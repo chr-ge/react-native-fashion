@@ -12,8 +12,8 @@ const numberOfMonths = 6;
 
 const graphData: DataPoint[] = [
     { id: 245674, date: new Date('10/01/2019').getTime(), value: 139.42, color: 'primary' },
-    { id: 245675, date: new Date('12/01/2019').getTime(), value: 281.23, color: 'orange' },
-    { id: 245677, date: new Date('02/01/2020').getTime(), value: 198.54, color: 'yellow' },
+    { id: 245675, date: new Date('12/01/2019').getTime(), value: 281.23, color: 'graph1' },
+    { id: 245677, date: new Date('02/01/2020').getTime(), value: 198.54, color: 'graph2' },
 ];
 
 const footerHeight = Dimensions.get('window').width / 5.5;

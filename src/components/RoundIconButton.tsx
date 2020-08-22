@@ -1,19 +1,19 @@
-import React from 'react';
-import { BorderlessButton } from 'react-native-gesture-handler';
-import RoundIcon, { RoundIconProps } from './RoundIcon';
+import React from "react";
+import { BorderlessButton } from "react-native-gesture-handler";
+import RoundIcon, { RoundIconProps } from "./RoundIcon";
 
-interface RoundIconButtonProps extends RoundIconProps{
-    onPress: () => void;
+interface RoundIconButtonProps extends RoundIconProps {
+  onPress: () => void;
 }
 
 const RoundIconButton = ({ onPress, ...props }: RoundIconButtonProps) => {
-    return (
-        <BorderlessButton {...{ onPress }}>
-            <RoundIcon {...props}/>
-        </BorderlessButton>
-    )
-}
+  return (
+    <BorderlessButton {...{ onPress }}>
+      <RoundIcon {...props} />
+    </BorderlessButton>
+  );
+};
 
-RoundIconButton.defaultProps = { iconRatio: 0.7 };
+RoundIconButton.defaultProps = { ...RoundIcon.defaultProps };
 
 export default RoundIconButton;
