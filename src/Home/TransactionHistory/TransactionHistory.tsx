@@ -1,9 +1,11 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
-import { Box, Header, Text } from '../../components';
+import { Image, ScrollView, StyleSheet, Dimensions } from 'react-native';
+import { Box, Header, Text, makeStyles } from '../../components';
 import { HomeNavigationProps } from '../../components/Navigation';
+import { Theme } from '../../components/Theme';
 import Graph, { DataPoint } from './Graph';
 import Transaction from './Transaction';
+import TopCurve from './TopCurve';
 
 const startDate = new Date('09/01/2019').getTime();
 const numberOfMonths = 6;
@@ -14,8 +16,22 @@ const graphData: DataPoint[] = [
     { id: 245677, date: new Date('02/01/2020').getTime(), value: 198.54, color: 'yellow' },
 ];
 
+const footerHeight = Dimensions.get('window').width / 5.5;
+const useStyles = makeStyles((theme: Theme) => ({ 
+    footer: {
+        ...StyleSheet.absoluteFillObject,
+        width: undefined,
+        height: undefined,
+        borderTopLeftRadius: theme.borderRadii.xl
+    },
+    scrollView: {
+        paddingBottom: footerHeight
+    }
+}));
+
 const TransactionHistory = ({ navigation }: HomeNavigationProps<'TransactionHistory'>) => {
-    
+    const styles = useStyles();
+
     return (
         <Box flex={1} backgroundColor="white">
             <Header 
@@ -34,11 +50,21 @@ const TransactionHistory = ({ navigation }: HomeNavigationProps<'TransactionHist
                     </Box>
                 </Box>
                 <Graph data={graphData} startDate={startDate} numberOfMonths={numberOfMonths}/>
-                <ScrollView>
-                    {
-                        graphData.map(transaction => <Transaction key={transaction.id} transaction={transaction} />)
-                    }
+                <ScrollView contentContainerStyle={styles.scrollView} showVerticalScrollIndicator={false} >
+                    {graphData.map(transaction => 
+                        <Transaction key={transaction.id} transaction={transaction} />
+                    )}
                 </ScrollView>
+            </Box>
+            <TopCurve {...{ footerHeight }}/>
+            <Box 
+                position="absolute" 
+                left={0}
+                right={0}
+                bottom={0} 
+                height={footerHeight}
+            >
+                <Image style={styles.footer} source={require('../../components/assets/1.png')} />
             </Box>
         </Box>
     )
