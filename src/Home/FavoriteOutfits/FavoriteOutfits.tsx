@@ -23,7 +23,12 @@ const defaultOutfits = [
 ]
 
 const FavoriteOutfits = ({ navigation }: HomeNavigationProps<'FavoriteOutfits'>) => {
-    const transition = <Transition.Change interpolation="easeInOut" durationMs={750} />;
+    const transition = (
+        <Transition.Together>
+            <Transition.Out type="fade" />
+            <Transition.In type="fade" />
+        </Transition.Together>
+    );
     const list = useRef<TransitioningView>(null);
     const [outfits, setOutfits] = useState(defaultOutfits);
     const theme = useTheme();
@@ -42,12 +47,12 @@ const FavoriteOutfits = ({ navigation }: HomeNavigationProps<'FavoriteOutfits'>)
                     <Transitioning.View ref={list} {...{ transition }}>
                         <Box flexDirection="row">
                             <Box marginRight="m">
-                                {outfits.filter(({ id }) => id % 2 !== 0).map((outfit) => 
+                                {outfits.filter((_, i) => i % 2 !== 0).map((outfit) => 
                                     <Outfit key={outfit.id} outfit={outfit} width={width} />
                                 )}
                             </Box>
                             <Box>
-                                {outfits.filter(({ id }) => id % 2 === 0).map((outfit) => 
+                                {outfits.filter((_, i) => i % 2 === 0).map((outfit) => 
                                     <Outfit key={outfit.id} outfit={outfit} width={width} />
                                 )}
                             </Box>
