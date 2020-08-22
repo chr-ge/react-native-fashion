@@ -84,7 +84,10 @@ const theme = createTheme({
       color: "secondary",
     },
   },
-  breakpoints: {},
+  breakpoints: {
+    phone: 0,
+    tablet: 768,
+  },
 });
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => (
