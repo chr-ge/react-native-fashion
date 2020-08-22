@@ -50,7 +50,7 @@ const TransactionHistory = ({ navigation }: HomeNavigationProps<'TransactionHist
                     </Box>
                 </Box>
                 <Graph data={graphData} startDate={startDate} numberOfMonths={numberOfMonths}/>
-                <ScrollView contentContainerStyle={styles.scrollView} showVerticalScrollIndicator={false} >
+                <ScrollView contentContainerStyle={styles.scrollView} showsVerticalScrollIndicator={false} >
                     {graphData.map(transaction => 
                         <Transaction key={transaction.id} transaction={transaction} />
                     )}

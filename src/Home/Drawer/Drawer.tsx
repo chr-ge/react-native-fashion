@@ -14,9 +14,9 @@ const height = DRAWER_WIDTH * aspectRatio;
 const items: DrawerItemProps[] = [
   { icon: "zap", label: "Outfit Ideas", screen: "OutfitIdeas", color: "primary" },
   { icon: "heart", label: "Favorite Outfits", screen: "FavoriteOutfits", color: "orange" },
-  { icon: "user", label: "Edit Profile", screen: "FavoriteOutfits", color: "yellow" },
+  { icon: "user", label: "Edit Profile", screen: "EditProfile", color: "yellow" },
   { icon: "clock", label: "Transaction History", screen: "TransactionHistory", color: "pink" },
-  { icon: "settings", label: "Notification Settings", screen: "FavoriteOutfits", color: "violet" },
+  { icon: "settings", label: "Notification Settings", screen: "NotificationSettings", color: "violet" },
   { icon: "log-out", label: "Logout", 
     onPress: (navigation) => navigation.dispatch(CommonActions.reset({
       index: 0,

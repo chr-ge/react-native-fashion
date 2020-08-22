@@ -28,7 +28,7 @@ const DrawerItem = ({ icon, label, color, ...props }: DrawerItemProps) => {
   return (
     <RectButton
       onPress={() =>
-        props.screen
+        "screen" in props
           ? navigation.navigate(props.screen)
           : props.onPress(navigation)
       }
