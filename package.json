@@ -13,7 +13,7 @@
     "@react-navigation/drawer": "^5.8.7",
     "@react-navigation/native": "^5.7.2",
     "@react-navigation/stack": "^5.8.0",
-    "@shopify/restyle": "^1.1.0",
+    "@shopify/restyle": "^1.2.0",
     "expo": "~38.0.8",
     "expo-asset": "~8.1.7",
     "expo-constants": "~9.1.1",
