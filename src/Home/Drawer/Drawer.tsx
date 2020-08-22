@@ -31,7 +31,7 @@ const Drawer = () => {
 
   return (
     <Box flex={1}>
-      <Box flex={0.2} backgroundColor="white">
+      <Box flex={0.2} backgroundColor="background">
         <Box 
           position="absolute" 
           top={0} 
@@ -59,7 +59,7 @@ const Drawer = () => {
           bottom={0} 
           borderTopLeftRadius="xl"
           borderBottomRightRadius="xl"
-          backgroundColor="white"
+          backgroundColor="background"
           justifyContent="center"
           padding="xl"
         >
@@ -80,7 +80,7 @@ const Drawer = () => {
         </Box>
       </Box>
       <Box 
-        backgroundColor="white" 
+        backgroundColor="background" 
         width={DRAWER_WIDTH} 
         overflow="hidden"
         height={height * 0.61} 

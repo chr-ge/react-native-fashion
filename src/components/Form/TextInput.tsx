@@ -42,7 +42,7 @@ const TextInput = forwardRef<RNTextInput, TextInputProps>(({ icon, error, touche
                     name={!error ? "check" : "x"} 
                     size={SIZE}
                     backgroundColor={!error ? "primary" : 'danger'}
-                    color="white"
+                    color="background"
                 />
             )}
         </Box>

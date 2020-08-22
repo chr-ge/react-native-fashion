@@ -34,7 +34,7 @@ const OutfitIdeas = ({ navigation }: HomeNavigationProps<'OutfitIdeas'>) => {
     const animatedIndex = useTransition(currentIndex);
     
     return (
-        <Box flex={1} backgroundColor="white">
+        <Box flex={1} backgroundColor="background">
             <Header 
                 title="Outfit Ideas"
                 left={{ icon: 'menu', onPress: () => navigation.openDrawer() }}

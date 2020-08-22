@@ -11,7 +11,7 @@ const PasswordChanged = ({ navigation }: AuthNavigationProps<"PasswordChanged">)
                 <RoundIconButton 
                     name="x"
                     size={60}
-                    backgroundColor="white" 
+                    backgroundColor="background" 
                     color="secondary" 
                     onPress={() => navigation.pop()} 
                 />

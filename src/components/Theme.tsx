@@ -1,14 +1,25 @@
-import { ViewStyle, TextStyle, ImageStyle } from 'react-native';
-import { createTheme, createText, createBox, useTheme as useReTheme } from '@shopify/restyle'
+import React, { ReactNode } from "react";
+import { ViewStyle, TextStyle, ImageStyle } from "react-native";
+import {
+  createTheme,
+  createText,
+  createBox,
+  useTheme as useReTheme,
+  ThemeProvider as ReStyleThemeProvider,
+} from "@shopify/restyle";
 
-export const theme = createTheme({
+export const palette = {
+  white: "white",
+};
+
+const theme = createTheme({
   colors: {
     primary: "#2CB9B0",
     primaryLight: "#E7F9F7",
     secondary: "#0C0D34",
     danger: "#FF0058",
     body: "rgba(12, 13, 52, 0.7)",
-    white: "white",
+    background: palette.white,
     grey: "rgba(12, 13, 52, 0.05)",
     lightGrey: "#F4F0EF",
     whiteGrey: "#FAFAFA",
@@ -17,7 +28,7 @@ export const theme = createTheme({
     yellow: "#FFC641",
     pink: "#FF87A2",
     violet: "#442CB9",
-    lightBlue: "#BFEAF5"
+    lightBlue: "#BFEAF5",
   },
   spacing: {
     s: 8,
@@ -37,23 +48,23 @@ export const theme = createTheme({
       fontSize: 80,
       lineHeight: 80,
       color: "white",
-      textAlign: "center"
+      textAlign: "center",
     },
     title1: {
       fontFamily: "SFProDisplay-Semibold",
       fontSize: 28,
-      color: 'secondary',
+      color: "secondary",
     },
     title2: {
       fontFamily: "SFProDisplay-Semibold",
       fontSize: 24,
       lineHeight: 30,
-      color: 'secondary',
+      color: "secondary",
     },
     title3: {
       fontFamily: "SFProDisplay-Semibold",
       fontSize: 16,
-      color: 'secondary',
+      color: "secondary",
     },
     body: {
       fontFamily: "SFProDisplay-Regular",
@@ -71,11 +82,14 @@ export const theme = createTheme({
       lineHeight: 24,
       fontFamily: "SFProDisplay-Semibold",
       color: "secondary",
-    }
+    },
   },
   breakpoints: {},
 });
 
+export const ThemeProvider = ({ children }: { children: ReactNode }) => (
+  <ReStyleThemeProvider {...{ theme }}>{children}</ReStyleThemeProvider>
+);
 export type Theme = typeof theme;
 export const Box = createBox<Theme>();
 export const Text = createText<Theme>();
@@ -84,8 +98,8 @@ export const useTheme = () => useReTheme<Theme>();
 type NamedStyles<T> = { [P in keyof T]: ViewStyle | TextStyle | ImageStyle };
 
 export const makeStyles = <T extends NamedStyles<T>>(
-    styles: (theme: Theme) => T
+  styles: (theme: Theme) => T
 ) => () => {
-    const currentTheme = useTheme();
-    return styles(currentTheme);
-}
+  const currentTheme = useTheme();
+  return styles(currentTheme);
+};

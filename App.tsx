@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { ThemeProvider } from '@shopify/restyle';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ThemeProvider } from './src/components/Theme';
 
 import { LoadAssets } from './src/components';
 import { AppRoutes } from './src/components/Navigation';
-import { theme } from './src/components/Theme';
 import { AuthenticationNavigator, assets as authAssets } from './src/Authentication';
 import { HomeNavigator, assets as homeAssets } from './src/Home';
 
@@ -22,7 +21,7 @@ const AppStack = createStackNavigator<AppRoutes>();
 
 export default function App() {
   return (
-    <ThemeProvider {...{ theme }}>
+    <ThemeProvider>
       <LoadAssets {...{ fonts, assets }}>
         <SafeAreaProvider>
           <AppStack.Navigator headerMode="none">

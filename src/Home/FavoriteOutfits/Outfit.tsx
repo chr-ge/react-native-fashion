@@ -23,7 +23,7 @@ const Outfit = ({ outfit, width }: OutfitProps) => {
                 padding="m"
                 style={{ backgroundColor: outfit.color, width, height: width * outfit.aspectRatio }}
             >
-                {selected && <RoundIcon name="check" backgroundColor="primary" color="white" size={24} />}
+                {selected && <RoundIcon name="check" backgroundColor="primary" color="background" size={24} />}
             </Box>
         </BorderlessTap>
     )
