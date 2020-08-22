@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dimensions, Image } from 'react-native';
-import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { useNavigation, DrawerActions, CommonActions } from '@react-navigation/native';
 
 import { Box, Header, Text, useTheme } from '../../components';
 import DrawerItem, { DrawerItemProps } from './DrawerItem';
@@ -14,10 +14,15 @@ const height = DRAWER_WIDTH * aspectRatio;
 const items: DrawerItemProps[] = [
   { icon: "zap", label: "Outfit Ideas", screen: "OutfitIdeas", color: "primary" },
   { icon: "heart", label: "Favorite Outfits", screen: "FavoriteOutfits", color: "orange" },
-  { icon: "user", label: "Edit Profile", screen: "EditProfile", color: "yellow" },
+  { icon: "user", label: "Edit Profile", screen: "FavoriteOutfits", color: "yellow" },
   { icon: "clock", label: "Transaction History", screen: "TransactionHistory", color: "pink" },
-  { icon: "settings", label: "Notification Settings", screen: "NotificationSettings", color: "violet" },
-  { icon: "log-out", label: "Logout", screen: "Logout", color: "secondary" },
+  { icon: "settings", label: "Notification Settings", screen: "FavoriteOutfits", color: "violet" },
+  { icon: "log-out", label: "Logout", 
+    onPress: (navigation) => navigation.dispatch(CommonActions.reset({
+      index: 0,
+      routes: [{ name: 'Authentication' }]
+    })), color: "secondary"
+  },
 ]
 
 const Drawer = () => {
