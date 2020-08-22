@@ -9,22 +9,10 @@ import Categories from './Categories';
 import Card from './Card';
 
 const cards = [
-    {
-        index: 3, 
-        source: require('../../Authentication/assets/5.png')
-    },
-    {
-        index: 2, 
-        source: require('../../Authentication/assets/5.png')
-    },
-    {
-        index: 1, 
-        source: require('../../Authentication/assets/5.png')
-    },
-    {
-        index: 0, 
-        source: require('../../Authentication/assets/5.png')
-    },
+    { index: 3, source: require('../../Authentication/assets/5.png') },
+    { index: 2, source: require('../../Authentication/assets/5.png') },
+    { index: 1, source: require('../../Authentication/assets/5.png') },
+    { index: 0, source: require('../../Authentication/assets/5.png') },
 ]
 
 const step = 1 / (cards.length - 1);

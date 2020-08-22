@@ -45,8 +45,8 @@ export const useSpring = ({ value, velocity, state: gestureState, snapPoints, on
                 set(config.restDisplacementThreshold, 0.01),
             ], [
                 set(config.overshootClamping, 0),
-                set(config.restSpeedThreshold, 100),
-                set(config.restDisplacementThreshold, 100),
+                set(config.restSpeedThreshold, 500),
+                set(config.restDisplacementThreshold, 500),
             ])
         ]),
         cond(eq(gestureState, State.END), [

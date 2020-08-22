@@ -47,7 +47,7 @@ const theme = createTheme({
       fontFamily: "SFProDisplay-Bold",
       fontSize: 80,
       lineHeight: 80,
-      color: "white",
+      color: "background",
       textAlign: "center",
     },
     title1: {
