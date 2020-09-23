@@ -16,7 +16,7 @@ const items: DrawerItemProps[] = [
   { icon: "heart", label: "Favorite Outfits", screen: "FavoriteOutfits", color: "drawer1" },
   { icon: "user", label: "Edit Profile", screen: "EditProfile", color: "drawer2" },
   { icon: "clock", label: "Transaction History", screen: "TransactionHistory", color: "drawer3" },
-  { icon: "settings", label: "Notification Settings", screen: "NotificationSettings", color: "drawer4" },
+  { icon: "settings", label: "Notification Settings", screen: "FavoriteOutfits", color: "drawer4" },
   { icon: "log-out", label: "Logout", 
     onPress: (navigation) => navigation.dispatch(CommonActions.reset({
       index: 0,
@@ -76,7 +76,7 @@ const Drawer = () => {
             <Text variant="title1" textAlign="center">Mike Peter</Text>
             <Text variant="body" textAlign="center">mike@fashionvista.com</Text>
           </Box>
-          {items.map(item => <DrawerItem key={item.screen} {...item} />)}
+          {items.map(item => <DrawerItem key={item.icon} {...item} />)}
         </Box>
       </Box>
       <Box 
