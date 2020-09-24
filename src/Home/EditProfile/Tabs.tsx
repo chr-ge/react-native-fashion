@@ -51,6 +51,7 @@ const Tabs = ({ tabs, children }: TabsProps) => {
       </Box>
       <Animated.View
         style={{
+          flex: 1,
           width: width * tabs.length,
           flexDirection: "row",
           transform: [{ translateX: multiply(-width, transition) }],
