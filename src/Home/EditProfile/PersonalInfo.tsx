@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView } from "react-native";
 
-import { Box, Text, useTheme } from "../../components";
+import { Box, Text } from "../../components";
 import TextInput from "../../components/Form/TextInput";
 import CheckboxGroup from "./CheckboxGroup";
 
@@ -10,10 +10,7 @@ const genders = [
   { value: "female", label: "Female" },
 ]
 
-const PersonalInfo = () => {
-  const theme = useTheme();
-
-  return (
+const PersonalInfo = () => {return (
     <ScrollView>
       <Box padding="m">
         <Text variant="body" marginBottom="m">Account Information</Text>
