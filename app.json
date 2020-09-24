@@ -1,9 +1,12 @@
 {
   "expo": {
-    "name": "react-native-fashion",
+    "sdkVersion": "39.0.0",
+    "name": "React Native Fashion",
     "slug": "react-native-fashion",
+    "owner": "ace26",
     "version": "1.0.0",
     "orientation": "portrait",
+    "githubUrl": "https://github.com/chr-ge/react-native-fashion",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
