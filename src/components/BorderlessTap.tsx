@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { TapGestureHandler, State } from 'react-native-gesture-handler';
 import Animated, { useCode, eq, cond, call, startClock, stopClock, set, 
     greaterThan, add, clockRunning, and, not, neq } from 'react-native-reanimated';
-import { useTapGestureHandler, useClock, useValue } from 'react-native-redash';
+import { useTapGestureHandler, useClock, useValue } from 'react-native-redash/lib/module/v1';
 
 interface BorderlessTapProps {
     onPress: () => void;

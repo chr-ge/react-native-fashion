@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Box, Text, BorderlessTap } from '../../components';
+import { View, StyleSheet, Pressable } from 'react-native';
+import { Box, Text } from '../../components';
 
 interface CategoryProps {
     category: {
@@ -17,7 +17,7 @@ const Category = ({ category: { color: backgroundColor, title } }: CategoryProps
     const [selected, setSelected] = useState(false);
     
     return (
-        <BorderlessTap onPress={() => setSelected((prev) => !prev)}>
+        <Pressable onPress={() => setSelected((prev) => !prev)} style={({ pressed }) => ({ opacity: pressed ?  0.5 : 1 })}>
             <Box marginLeft="m" marginTop="s" alignItems="center" >
                 <Box 
                     width={OUTER_RADIUS * 2} 
@@ -42,7 +42,7 @@ const Category = ({ category: { color: backgroundColor, title } }: CategoryProps
                 </Box>
                 <Text textAlign="center" marginTop="s">{title}</Text>
             </Box>
-        </BorderlessTap>
+        </Pressable>
     )
 }
 

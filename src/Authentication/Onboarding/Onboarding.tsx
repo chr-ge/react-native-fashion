@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
-import { useScrollHandler, interpolateColor } from "react-native-redash";
+import { useScrollHandler, interpolateColor } from "react-native-redash/lib/module/v1";
 import Animated, { multiply, divide } from "react-native-reanimated";
 import { AuthNavigationProps } from '../../components/Navigation';
 

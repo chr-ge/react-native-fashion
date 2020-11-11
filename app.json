@@ -3,6 +3,7 @@
     "sdkVersion": "39.0.0",
     "name": "React Native Fashion",
     "slug": "react-native-fashion",
+    "description": "Fashion inspiration and shopping app helping you wear that's in style. Made with Typescript & ReactNative.",
     "owner": "ace26",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,6 +25,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "experiments": {
+      "turboModules": true
     }
   }
 }

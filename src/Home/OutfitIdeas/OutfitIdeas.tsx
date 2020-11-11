@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTransition } from 'react-native-redash';
+import { useTransition } from 'react-native-redash/lib/module/v1';
 import { sub } from 'react-native-reanimated';
 
 import { Box, Header } from '../../components';
