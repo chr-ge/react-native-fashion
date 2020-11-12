@@ -44,7 +44,7 @@ const Drawer = () => {
           <Header 
             title="Menu"
             left={{ icon: 'x', onPress: () => navigation.dispatch(DrawerActions.closeDrawer()) }}
-            right={{ icon: 'shopping-bag', onPress: () => true }}
+            right={{ icon: 'shopping-bag', onPress: () => navigation.navigate("Cart") }}
             dark
           />
         </Box>
