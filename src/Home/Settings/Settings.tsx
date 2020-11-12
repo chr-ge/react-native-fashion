@@ -5,13 +5,6 @@ import { HomeNavigationProps } from "../../components/Navigation";
 
 import Notification from "./Notification";
 
-const cards = [
-  { index: 3, source: require("../../Authentication/assets/5.png") },
-  { index: 2, source: require("../../Authentication/assets/5.png") },
-  { index: 1, source: require("../../Authentication/assets/5.png") },
-  { index: 0, source: require("../../Authentication/assets/5.png") },
-];
-
 const Settings = ({ navigation }: HomeNavigationProps<"Settings">) => {
   return (
     <Content>
