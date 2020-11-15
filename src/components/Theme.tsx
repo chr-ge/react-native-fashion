@@ -34,6 +34,7 @@ const theme = createTheme({
     primaryLight: palette.lightCyan,
     secondary: palette.darkBlue,
     info: palette.darkGrey,
+    edit: palette.lightBlue,
     danger: palette.darkPink,
     body: "rgba(12, 13, 52, 0.7)",
     graph1: palette.orange,
