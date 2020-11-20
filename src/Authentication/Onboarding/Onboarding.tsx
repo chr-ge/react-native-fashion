@@ -50,7 +50,7 @@ const slides = [
         color: "#BEECC4",
     },
     {
-        title: "Excentric",
+        title: "Eccentric",
         subtitle: "Your Style, Your Way",
         description: "Create your individual & unique style and look amazing everyday",
         color: "#FFE4D9",
