@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
+import { BorderlessButton } from "react-native-gesture-handler";
 import { BoxProps } from "@shopify/restyle";
-import { BorderlessTap, Box } from "../../components";
+import { Box } from "../../components";
 import { Theme } from "../../components/Theme";
 
 export const CARD_HEIGHT = 160;
@@ -17,7 +18,7 @@ const CardLayout = ({
   backgroundColor,
 }: CardLayoutProps) => {
   return (
-    <BorderlessTap onPress={onPress}>
+    <BorderlessButton onPress={onPress}>
       <Box
         padding="m"
         width={120}
@@ -28,7 +29,7 @@ const CardLayout = ({
       >
         {children}
       </Box>
-    </BorderlessTap>
+    </BorderlessButton>
   );
 };
 
