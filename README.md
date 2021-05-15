@@ -4,4 +4,4 @@
 
 **Fashion inspiration and shopping app helping you wear what's in style. Made with Typescript & ReactNative.**
 
-Application made following [William Candillon's](https://www.youtube.com/c/wcandillon/) youtube series.
+Application inspired by William Candillon's youtube series.
